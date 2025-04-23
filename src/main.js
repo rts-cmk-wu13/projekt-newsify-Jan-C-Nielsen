@@ -1,8 +1,25 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// import javascriptLogo from './javascript.svg'
+// import viteLogo from '/vite.svg'
+ import detail from './detail'
+
+let apikey = `MibrQ7dgs0zI5KvQbJWplGJOvpjveLSh`
+let apiUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=`
+
+async function getArticles(apiUrl, subject, options="") {
+ 
+  let url = apiUrl + `section.name%3A%22${subject}%22%20&` + `&api-key=` + apikey
+  console.log(url)
+  let x = await fetch(url);
+  let articles = await x.json();
+  console.log(articles)
+  return articles
+}
+
 
 document.querySelector('#app').innerHTML = `
- 
+${detail((await getArticles(apiUrl, "Sports")).response.docs, "Sports")}
+${detail((await getArticles(apiUrl, "Arts")).response.docs, "Arts")}
+${detail((await getArticles(apiUrl, "Travel")).response.docs, "Travel")}
+${detail((await getArticles(apiUrl, "Health")).response.docs, "Health")}
 `
