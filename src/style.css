@@ -1,12 +1,11 @@
+@charset "UTF-8";
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,8 +17,50 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+}
+
+details > summary {
+  font-size: 16px;
+  font-family: "Playfair Display";
+  font-weight: bold;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: " ►";
+}
+
+details[open] summary:after {
+  content: " ▼";
+}
+
+details {
+  text-align: left;
+  border-bottom: 1px;
+  border-top: 1px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  padding: 0.5em;
+}
+details img {
+  margin-right: 1rem;
+  border-radius: 8px;
 }
 
 body {
@@ -30,13 +71,38 @@ body {
   min-height: 100vh;
 }
 
+form {
+  margin: 1em 0;
+  background-color: #D9D9D9;
+}
+
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 24px;
+  font-family: "Playfair Display";
+  font-weight: bold;
+}
+h1 img {
+  padding-right: 1em;
+}
+
+h4 {
+  font-family: "Playfair Display";
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+p {
+  font-family: "Open Sans";
+  font-size: 14px;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 #app {
-  max-width: 1280px;
+  max-width: 398px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -48,11 +114,13 @@ h1 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(100, 108, 255, 0.6666666667));
 }
+
 .logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+  filter: drop-shadow(0 0 2em rgba(247, 223, 30, 0.6666666667));
 }
 
 .card {
@@ -74,9 +142,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -94,3 +164,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/*# sourceMappingURL=style.css.map */
