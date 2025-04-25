@@ -11,7 +11,7 @@ async function getArticles(apiUrl, subject, options="") {
  
   let url = apiUrl + `section.name%3A%22${subject}%22%20&` + `&api-key=` + apikey
   console.log(url)
-  let x = await fetch(url);
+  let x = await fetch(url, {cache: 'force-cache'});
   let articles = await x.json();
   console.log(articles)
   return articles
