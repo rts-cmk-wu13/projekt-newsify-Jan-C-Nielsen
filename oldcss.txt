@@ -95,33 +95,22 @@ h4 {
   color: black;
 }
 
-.buttonrow {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 3rem;
-}
-
-.continue {
-  color: white;
+.continue{
   background-color: #4D861F;
 }
 
-button {
+button{
   border-radius: 40px;
   border-style: solid;
   border-color: black;
-  font-size: 18px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  width: 166px;
 }
 
-.onboarding {
+.onboarding{
   font-family: "Open Sans";
   font-size: 18px;
-  font-weight: normal;
+  font-weight:normal;
   color: black;
-  margin: 3rem;
+  margin: 0;
   padding: 0;
 }
 
@@ -163,6 +152,18 @@ p {
   color: #888;
 }
 
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
 button:hover {
   border-color: #646cff;
 }
@@ -184,4 +185,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-/*# sourceMappingURL=style.css.map */
