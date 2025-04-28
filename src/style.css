@@ -101,11 +101,6 @@ h4 {
   margin-top: 3rem;
 }
 
-.continue {
-  color: white;
-  background-color: #4D861F;
-}
-
 button {
   border-radius: 40px;
   border-style: solid;
@@ -131,6 +126,18 @@ p {
   color: black;
   margin: 0;
   padding: 0;
+}
+
+.login {
+  width: 345px;
+  margin-bottom: 1rem;
+}
+
+.or {
+  margin-bottom: 1rem;
+}
+.or span {
+  margin: 0 1em;
 }
 
 #app {
@@ -165,6 +172,8 @@ p {
 
 button:hover {
   border-color: #646cff;
+  color: white;
+  background-color: #4D861F;
 }
 
 button:focus,
