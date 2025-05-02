@@ -46,27 +46,27 @@ Journey Now!</h1>
 `
 ]
 
-document.querySelector('#app').innerHTML = layout[i++]
 
-let skip = document.querySelector(".skip")
-if (skip) skip.addEventListener("click", () => window.close())
-document.querySelectorAll(".continue").forEach(x => x.addEventListener("click", continueFunc))
+function eventFunction() {
+    document.querySelector('#app').innerHTML = layout[i]
+    let skip = document.querySelector(".skip")
+    if (skip) skip.addEventListener("click", () => window.close())
+    document.querySelectorAll(".continue").forEach(x => x.addEventListener("click", continueFunc))
+    i++
+}
+
+eventFunction()
 
 function skipFunc() {
     window.close()
 }
 
 function continueFunc() {
-    
     if (i < layout.length) {
         console.log(i)
-        document.querySelector('#app').innerHTML = layout[i]
-        let skip = document.querySelector(".skip")
-        if (skip) skip.addEventListener("click", () => window.close())
-        document.querySelectorAll(".continue").forEach(x => x.addEventListener("click", continueFunc))
-        i++
+        eventFunction()
     }
     else {
         window.location.href = "./home/index.html";
-    }
+    } 
 }

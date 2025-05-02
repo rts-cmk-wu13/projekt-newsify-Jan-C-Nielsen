@@ -1,8 +1,5 @@
 @charset "UTF-8";
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -181,16 +178,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.menu {
+  position: fixed;
+  z-index: 10;
+}
+.menu ul {
+  display: flex;
+  margin-left: 0;
+  background-color: #f0f0f0;
+}
+.menu li {
+  width: 60px;
+}
+.menu button {
+  text-align: center;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
 /*# sourceMappingURL=style.css.map */
