@@ -49,6 +49,7 @@ async function makeDetail(subject) {
 
 document.querySelector('#app').innerHTML = await innerHTML()
 
+
   /*
 async function eventFunction() {
 
