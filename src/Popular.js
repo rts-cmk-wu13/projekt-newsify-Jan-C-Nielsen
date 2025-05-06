@@ -33,10 +33,10 @@ async function getArticles(apiUrl, subject = "", options = "") {
   ${await makeDetail("")}
   <nav class="menu">
       <ul>
-        <li><a href="./home/index.html" class="home"><img src="${home}"><p>Home</p></a></li>
-        <li><a href="./archive/index.html" class="archive"><img src="${archive}"><p>Archive</p></a></li>
-        <li><a href="star.html" class="star"><img src="${star}"><p>Popular</p></a></li>
-        <li><a href="./setting/index.html" class="setting"><img src="${setting}"><p>Settings</p></a></li>
+       <li><a href="../home/index.html" class="home"><img src="${home}"><p>Home</p></a></li>
+             <li><a href="../archive/index.html" class="archive"><img src="${archive}"><p>Archive</p></a></li>
+             <li><a href="../star/index.html" class="star"><img src="${star}"><p>Popular</p></a></li>
+             <li><a href="../settings/index.html" class="setting"><img src="${setting}"><p>Settings</p></a></li>
       </ul>
     </nav>
   `

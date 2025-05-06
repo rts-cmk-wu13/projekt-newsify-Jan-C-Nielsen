@@ -26,6 +26,8 @@ ul {
 
 li {
     display: flex;
+    width: 100%;
+    justify-items: space-between;
 }
 
 details>summary {
@@ -35,10 +37,7 @@ details>summary {
     list-style: none;
 }
 
-summary::-webkit-details-marker {
-    display: none;
 
-}
 
 summary::after {
 
@@ -197,7 +196,9 @@ button:focus-visible {
 .menu {
     position: fixed;
     z-index: 10;
-
+    bottom: 0;      /* Placer i bunden af viewport */
+    left: 0;        /* Stræk fra venstre kant */
+   right: 0;     /* Stræk til højre kant */
     ul {
         display: flex;
         margin-left: 0;
@@ -211,6 +212,27 @@ button:focus-visible {
     button {
         text-align: center;
     }
+}
+
+.swipelist{
+    list-style-type: none;
+    padding: 0;
+    overflow: clip;
+    touch-action: none;
+    
+}
+
+.swipelist__item{
+    touch-action: none;
+    position: relative;
+}
+
+.swipelist__content{
+  
+}
+
+.animate{
+    transition: all 0.3s ease-in-out
 }
 
 @media (prefers-color-scheme: light) {

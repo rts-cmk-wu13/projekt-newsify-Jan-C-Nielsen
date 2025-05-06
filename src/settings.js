@@ -7,6 +7,7 @@ import archive from '../assets/feather_bookmark.png'
 import star from '../assets/feather_star.png'
 import setting from '../assets/feather_settings.png'
 import { SaveLocalStorage, GetLocalStorage } from './localstorage.js'
+//import darkmode from './darkmode.js'
 
 function innerHTML() {
     return ` 
@@ -22,10 +23,10 @@ ${makeSetting("BUSINESS")}
 <button class="darkmode">Toggle dark mode</button>
 <nav class="menu">
     <ul>
-      <li><a href="#" class="home"><img src="${home}"><p>Home</p></a></li>
-      <li><a href="../archive/index.html" class="archive"><img src="${archive}"><p>Archive</p></a></li>
-      <li><a href="../star/index.html" class="star"><img src="${star}"><p>Popular</p></a></li>
-      <li><a href="../setting/index.html" class="setting"><img src="${setting}"><p>Settings</p></a></li>
+     <li><a href="../home/index.html" class="home"><img src="${home}"><p>Home</p></a></li>
+           <li><a href="../archive/index.html" class="archive"><img src="${archive}"><p>Archive</p></a></li>
+           <li><a href="../star/index.html" class="star"><img src="${star}"><p>Popular</p></a></li>
+           <li><a href="../settings/index.html" class="setting"><img src="${setting}"><p>Settings</p></a></li>
     </ul>
   </nav>
 `
@@ -43,25 +44,28 @@ switchElms.forEach(x => x.addEventListener("change",
     function () {
         let switchElm = x.querySelector("#switchbox")
         console.log("addEventListener" + switchElm.checked)
-        // document.documentElement.setAttribute("data-dark", switchElm.checked);
         SaveLocalStorage(x.classList[1], switchElm.checked);
     }))
 
 switchElms.forEach(x => {
+    let switchElm = x.querySelector("#switchbox")
     console.log(x)
     let visible = GetLocalStorage(x.classList[1])
-    if (visible === null)
-        x.checked = true
+    console.log(visible)
+    if (visible === null || visible === "true")
+        switchElm.setAttribute('checked', '')
     else
-        x.checked = visible
+        switchElm.removeAttribute('checked')
 })
+ 
+//document.querySelector(".darkmode").addEventListener("click", darkmode)
 
 function makeSwitch(subject) {
-        let switchHTML = `
+    let switchHTML = `
             <label class="switch ${subject}" id="switch" >
             <input  type="checkbox" id="switchbox" checked>
                 <span class="slider round"></span>
             </label>`;
 
-        return switchHTML;
-    }
+    return switchHTML;
+}
